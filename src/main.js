@@ -11,6 +11,7 @@ const api = axios.create({
 async function getTrendingMoviesPreview() {
     const { data } = await api('trending/movie/day')
     const movies = data.results;
+    console.log(movies)
 
     trendingMoviesPreviewList.innerHTML = "";
     movies.forEach(movie => {       
