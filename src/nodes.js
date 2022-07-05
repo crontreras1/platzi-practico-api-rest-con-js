@@ -3,7 +3,7 @@ const headerSection = document.querySelector('#header');
 const trendingPreviewSection = document.querySelector('#trendingPreview');
 const categoriesPreviewSection = document.querySelector('#categoriesPreview');
 const genericSection = document.querySelector('#genericList');
-const movieDetailSection = document.querySelector('#movieDetails');
+const movieDetailSection = document.querySelector('#movieDetail');
 
 //Lists and Containers
 const searchForm = document.querySelector('#searchForm');

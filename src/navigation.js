@@ -27,8 +27,6 @@ function navigator() {
     } else {
         homePage();
     }
-    
-    location.hash
 }
 
 function homePage() {

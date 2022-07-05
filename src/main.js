@@ -11,32 +11,32 @@ const api = axios.create({
 async function getTrendingMoviesPreview() {
     const { data } = await api('trending/movie/day')
     const movies = data.results;
-    console.log(movies)
 
-    movies.forEach(movie => {
-        const trendingMoviesPreviewList = document.querySelector('#trendingPreview .trendingPreview-movieList')
-
+    trendingMoviesPreviewList.innerHTML = "";
+    movies.forEach(movie => {       
         const movieContainer = document.createElement('div')
         movieContainer.classList.add('movie-container')
         
         const movieImg = document.createElement('img')
         movieImg.classList.add('movie-img')
         movieImg.setAttribute('alt', movie.title)
-        movieImg.setAttribute('src', 'https://image.tmdb.org/t/p/w300/' + movie.poster_path)
+        movieImg.setAttribute(
+            'src',
+            'https://image.tmdb.org/t/p/w300/' + movie.poster_path,
+        )
+
+        movieContainer.appendChild(movieImg)
+        trendingMoviesPreviewList.appendChild(movieContainer)
     })
-
-    movieContainer.appendChild(movieImg)
-    trendingMoviesPreviewList.appendChild(movieContainer)
 }
-
 
 async function getCategoriesMoviesPreview () {
     const {data} = await api ('genre/movie/list')
-
     const categories = data.genres;
-    categories.forEach(category => {
-        const categoriesPreviewList = document.querySelector('#categoriesPreview .categoriesPreview-list')
 
+    categoriesPreviewList.innerHTML = "";
+
+    categories.forEach(category => {
         const categoryContainer = document.createElement('div')
         categoryContainer.classList.add('category-container')
 
