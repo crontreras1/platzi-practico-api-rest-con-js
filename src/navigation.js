@@ -10,6 +10,8 @@ arrowBtn.addEventListener('click', () => {
     location.hash = '#home'
 })
 
+homePage();
+
 window.addEventListener('DOMContentloaded', navigator, false);
 window.addEventListener('hashchange', navigator, false);
 
@@ -45,7 +47,7 @@ function homePage() {
     genericSection.classList.add('inactive');
     movieDetailSection.classList.add('inactive');
         
-    getTrandingMoviesPreview();
+    getTrendingMoviesPreview();
     getCategoriesMoviesPreview();
 }
 
