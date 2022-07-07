@@ -32,7 +32,7 @@ function navigator() {
 }
 
 function homePage() {
-    console.log('Home!!') 
+    // console.log('Home!!') 
 
     headerSection.classList.remove('header-container--long');
     headerSection.style.background = '';
@@ -66,6 +66,14 @@ function categoriesPage() {
     categoriesPreviewSection.classList.add('inactive');
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
+
+    //Nos devuelve la siguite estructura: ['#category', 'id-name']
+    const [_, categoryData] = location.hash.split('=');
+    const [categoryId, categoryName] = categoryData.split('-');
+
+    headerCategoryTitle.innerHTML = categoryName;
+
+    getMoviesByCategories(categoryId); 
 }
 
 function moviePage() {
