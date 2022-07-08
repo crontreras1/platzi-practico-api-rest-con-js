@@ -16,7 +16,7 @@ window.addEventListener('DOMContentloaded', navigator, false);
 window.addEventListener('hashchange', navigator, false);
 
 function navigator() {
-    console.log({location})
+    // console.log({location})
 
     if (location.hash.startsWith('#trends')) {
         trendsPage();
@@ -52,7 +52,7 @@ function homePage() {
 }
 
 function categoriesPage() {
-    console.log('Categories!!')   
+    // console.log('Categories!!')   
 
     headerSection.classList.remove('header-container--long');
     headerSection.style.background = '';
@@ -67,7 +67,7 @@ function categoriesPage() {
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
 
-    //Nos devuelve la siguite estructura: ['#category', 'id-name']
+    //['#category', 'id-name']
     const [_, categoryData] = location.hash.split('=');
     const [categoryId, categoryName] = categoryData.split('-');
 

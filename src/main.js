@@ -80,3 +80,5 @@ async function getMoviesByCategories (id) {
         genericSection.appendChild(movieContainer);
     });
 }
+
+// getMoviesByCategories(id);
